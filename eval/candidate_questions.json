@@ -1,0 +1,362 @@
+[
+  {
+    "question": "在使用LangChain的join/rejoin模式时，如果客户端因为网络中断断开连接，我该如何指定相同的threadId来重新连接并恢复正在运行的agent流？",
+    "source_file": "langchain\\frontend\\join-rejoin.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\frontend\\join-rejoin.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "如何在 LangChain 的 branching chat 中，通过编辑一条之前的用户消息来重新运行 agent 并保留分支历史？",
+    "source_file": "langchain\\frontend\\branching-chat.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\frontend\\branching-chat.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "使用 useStream 钩子时，如何为每个工具调用渲染带有加载状态和错误处理的 UI 卡片？",
+    "source_file": "langchain\\frontend\\tool-calling.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\frontend\\tool-calling.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 中，如果我想同时独立地消费消息、工具调用和子图的迭代器，应该使用哪个 API？",
+    "source_file": "langchain\\streaming.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\streaming.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 中，如果遇到输出解析器无法处理模型输出的错误，但我的代码里没有显式使用输出解析器，这是什么原因？",
+    "source_file": "langchain\\errors\\OUTPUT_PARSING_FAILURE.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\errors\\OUTPUT_PARSING_FAILURE.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在测试 LangChain agent 时，如何在不调用真实 LLM API 的情况下进行单元测试？",
+    "source_file": "langchain\\test\\index.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\test\\index.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 中，如果模型返回了两个 tool_calls，但我只提供了一个 ToolMessage，会引发什么错误？",
+    "source_file": "langchain\\errors\\INVALID_TOOL_RESULTS.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\errors\\INVALID_TOOL_RESULTS.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在Agent Chat UI中配置连接时，如果我没有LangSmith API key，是否还能正常连接到本地Agent服务器？",
+    "source_file": "langchain\\ui.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\ui.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "如何使用 `langchain-mcp-adapters` 库让 LangChain agent 同时调用多个 MCP 服务器上定义的工具？",
+    "source_file": "langchain\\mcp.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\mcp.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 中，如何使用 pypdf 和 pdf-parse 分别加载 PDF 文档，并配合嵌入和向量存储构建一个基于 RAG 的搜索系统？",
+    "source_file": "langchain\\knowledge-base.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\knowledge-base.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 中使用 `useStream` 时，如何将它与 assistant-ui 的 `AssistantRuntimeProvider` 集成？",
+    "source_file": "langchain\\frontend\\integrations\\overview.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\frontend\\integrations\\overview.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 中，如何为消息添加或访问 metadata 字段，比如获取 token 使用量或消息 ID？",
+    "source_file": "langchain\\messages.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\messages.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "如果我已经有一个SQL数据库作为知识库，在使用LangChain进行RAG时，是否还需要重新构建一个向量存储？",
+    "source_file": "langchain\\retrieval.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\retrieval.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 中，如何通过 contentBlocks 属性区分并提取 GPT-5 或 Claude 返回的 reasoning 块和 text 块？",
+    "source_file": "langchain\\frontend\\reasoning-tokens.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\frontend\\reasoning-tokens.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "使用 LangChain 的 @tool 装饰器创建工具时，为什么类型提示是必需的，而 docstring 又有什么作用？",
+    "source_file": "langchain\\tools.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\tools.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "如何在 pytest 中配置只运行集成测试，而跳过单元测试？",
+    "source_file": "langchain\\test\\integration-testing.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\test\\integration-testing.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 的状态机模式中，如何根据用户的初始输入（比如通过分类器判断用户意图）来动态切换单个代理的配置（包括可用工具和指令）？",
+    "source_file": "langchain\\multi-agent\\handoffs-customer-support.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\multi-agent\\handoffs-customer-support.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 中构建 agent 时，如果 agent 经常执行错误的操作，通常是由于 LLM 能力不足还是上下文工程（context engineering）的问题？",
+    "source_file": "langchain\\context-engineering.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\context-engineering.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 的 router pattern 中，如果我想让一个用户查询同时路由到 GitHub、Notion 和 Slack 三个不同的 agent，并在最后合成结果，应该如何实现这种并行路由和结果合成的具体代码？",
+    "source_file": "langchain\\multi-agent\\router-knowledge-base.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\multi-agent\\router-knowledge-base.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 中，如果我不想使用多智能体系统，而用单个智能体处理复杂任务，有什么最佳实践或示例吗？",
+    "source_file": "langchain\\multi-agent\\index.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\multi-agent\\index.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "如何在 LangChain 中配置模型调用限制（Model call limit）中间件来防止成本过高？",
+    "source_file": "langchain\\middleware\\built-in.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\middleware\\built-in.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "LangChain 部署后的代理（deployed agents）有哪些具体的管理或监控功能？",
+    "source_file": "langchain\\studio.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\studio.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "LangChain 中如何处理长对话历史超出 LLM 上下文窗口限制的问题？",
+    "source_file": "langchain\\short-term-memory.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\short-term-memory.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "LangChain 的 skills 架构与 Agent Skills 和 llms.txt 模式有什么异同？",
+    "source_file": "langchain\\multi-agent\\skills.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\multi-agent\\skills.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "如果我在使用LangChain时遇到技术问题，应该通过哪个渠道获得最快的社区帮助？",
+    "source_file": "langchain\\get-help.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\get-help.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "如何使用 CopilotKit 的 CopilotKitMiddleware 让 LangGraph agent 返回结构化的 UI 组件而不是纯文本？",
+    "source_file": "langchain\\frontend\\integrations\\copilotkit.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\frontend\\integrations\\copilotkit.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在使用LangChain的create_agent时，如何为不同的大模型提供商（如OpenAI、Anthropic、Google）配置自定义工具？",
+    "source_file": "langchain\\overview.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\overview.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 React 中使用 useStream 时，如何实时解析和渲染 AI 返回的 Markdown 格式消息？",
+    "source_file": "langchain\\frontend\\markdown-messages.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\frontend\\markdown-messages.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在subagents架构中，如果我希望某个子代理能够直接与用户交互（例如收集额外信息），而不是只向主代理返回结果，应该如何实现？",
+    "source_file": "langchain\\multi-agent\\subagents.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\multi-agent\\subagents.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "我在 LangChain 的 prompt template 里直接写了一个 JSON 对象，结果报错说缺少输入变量，这是怎么回事？",
+    "source_file": "langchain\\errors\\INVALID_PROMPT_INPUT.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\errors\\INVALID_PROMPT_INPUT.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "如何在 LangSmith Cloud 上从 GitHub 仓库部署我的 LangChain 代理？",
+    "source_file": "langchain\\deploy.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\deploy.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 中，如何定义一个用于结构化输出的工具，并确保返回的数据符合预定义的 TypeScript 类型？",
+    "source_file": "langchain\\frontend\\structured-output.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\frontend\\structured-output.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "我收到 ValueError 说消息字典必须包含 'role' 和 'content' 键，但我的消息格式看起来是对的，可能是什么原因导致这个错误？",
+    "source_file": "langchain\\errors\\MESSAGE_COERCION_FAILURE.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\errors\\MESSAGE_COERCION_FAILURE.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在LangChain的create_agent中，如何通过Runtime对象向工具注入数据库连接等依赖，并确保工具可以访问这些运行时信息？",
+    "source_file": "langchain\\runtime.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\runtime.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "如何使用 LangChain 前端 SDK 实现人工审核（human-in-the-loop approval）的工作流？",
+    "source_file": "langchain\\frontend\\overview.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\frontend\\overview.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "如何在 LangChain 中使用 create_agent 创建的代理自动启用 LangSmith 追踪？",
+    "source_file": "langchain\\observability.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\observability.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangChain 的 router 架构中，如何通过 Command 或 Send 实现将查询路由到单个或多个专业 agent，并最终合成结果？",
+    "source_file": "langchain\\multi-agent\\router.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\multi-agent\\router.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在 LangGraph 的自定义工作流中，如何在一个节点中嵌入一个完整的代理（agent）而不是单个函数调用？",
+    "source_file": "langchain\\multi-agent\\custom-workflow.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\multi-agent\\custom-workflow.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在安装 LangChain 和 deepagents 依赖时，如果使用 npm 或 pnpm，为什么需要 Node.js 22+ 版本？",
+    "source_file": "langchain\\quickstart.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\quickstart.md"
+    ],
+    "gold_answer_summary": ""
+  },
+  {
+    "question": "在LangChain的组件关系图中，用户查询（User Query）是如何经过嵌入模型和检索器最终获得相关上下文（Relevant context）的？",
+    "source_file": "langchain\\component-architecture.md",
+    "type": "single_doc",
+    "gold_sources": [
+      "langchain\\component-architecture.md"
+    ],
+    "gold_answer_summary": ""
+  }
+]

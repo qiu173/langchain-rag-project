@@ -1,0 +1,44 @@
+[
+  {
+    "collection": "langchain_fixed",
+    "use_rerank": false,
+    "n_questions": 44,
+    "recall@5": 0.5681818181818182,
+    "mrr": 0.4446969696969697
+  },
+  {
+    "collection": "langchain_fixed",
+    "use_rerank": true,
+    "n_questions": 44,
+    "recall@5": 0.6818181818181818,
+    "mrr": 0.5878787878787879
+  },
+  {
+    "collection": "langchain_recursive",
+    "use_rerank": false,
+    "n_questions": 44,
+    "recall@5": 0.553030303030303,
+    "mrr": 0.4375
+  },
+  {
+    "collection": "langchain_recursive",
+    "use_rerank": true,
+    "n_questions": 44,
+    "recall@5": 0.6477272727272727,
+    "mrr": 0.5397727272727273
+  },
+  {
+    "collection": "langchain_semantic",
+    "use_rerank": false,
+    "n_questions": 44,
+    "recall@5": 0.5454545454545454,
+    "mrr": 0.36174242424242425
+  },
+  {
+    "collection": "langchain_semantic",
+    "use_rerank": true,
+    "n_questions": 44,
+    "recall@5": 0.8787878787878788,
+    "mrr": 0.8106060606060606
+  }
+]

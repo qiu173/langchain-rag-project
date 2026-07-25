@@ -1,0 +1,345 @@
+[
+  {
+    "id": "q001",
+    "question": "在使用LangChain的join/rejoin模式时，如果客户端因为网络中断断开连接，我该如何指定相同的threadId来重新连接并恢复正在运行的agent流？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\frontend\\join-rejoin.md"],
+    "gold_answer_summary": "需要在重新建立连接时传入与断开前相同的 threadId，前端 SDK 会用这个 ID 找回正在运行的 agent 流并继续订阅其输出。（草稿，请对照原文核实具体 API 调用方式）"
+  },
+  {
+    "id": "q002",
+    "question": "如何在 LangChain 的 branching chat 中，通过编辑一条之前的用户消息来重新运行 agent 并保留分支历史？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\frontend\\branching-chat.md"],
+    "gold_answer_summary": "编辑历史消息会创建一个新分支而不是覆盖原分支，原分支历史被保留，可以在两个分支间切换查看。（草稿，请核实具体方法名）"
+  },
+  {
+    "id": "q003",
+    "question": "使用 useStream 钩子时，如何为每个工具调用渲染带有加载状态和错误处理的 UI 卡片？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\frontend\\tool-calling.md"],
+    "gold_answer_summary": "useStream 暴露工具调用的状态字段（如 pending/success/error），可以根据这些状态条件渲染不同的 UI 卡片。（草稿，请核实具体字段名）"
+  },
+  {
+    "id": "q004",
+    "question": "在 LangChain 中，如果我想同时独立地消费消息、工具调用和子图的迭代器，应该使用哪个 API？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\streaming.md"],
+    "gold_answer_summary": "LangChain 提供多种 stream mode（如 messages/updates/values），可以指定多个 stream mode 同时消费不同类型的事件流。（草稿，请核实具体参数）"
+  },
+  {
+    "id": "q005",
+    "question": "在 LangChain 中，如果遇到输出解析器无法处理模型输出的错误，但我的代码里没有显式使用输出解析器，这是什么原因？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\errors\\OUTPUT_PARSING_FAILURE.md"],
+    "gold_answer_summary": "可能是结构化输出功能（如 with_structured_output）内部隐式使用了输出解析器，模型返回的格式不符合预期 schema 导致解析失败。（草稿，请核实）"
+  },
+  {
+    "id": "q006",
+    "question": "在测试 LangChain agent 时，如何在不调用真实 LLM API 的情况下进行单元测试？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\test\\index.md"],
+    "gold_answer_summary": "使用 mock/fake 模型替代真实 LLM，模拟固定的模型响应来测试 agent 的逻辑分支，不产生真实 API 调用开销。（草稿，请核实具体工具名）"
+  },
+  {
+    "id": "q007",
+    "question": "在 LangChain 中，如果模型返回了两个 tool_calls，但我只提供了一个 ToolMessage，会引发什么错误？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\errors\\INVALID_TOOL_RESULTS.md"],
+    "gold_answer_summary": "会抛出 INVALID_TOOL_RESULTS 相关错误，因为每个 tool_call 都需要对应一条 ToolMessage 作为结果返回，数量不匹配会导致校验失败。（草稿，请核实报错信息原文）"
+  },
+  {
+    "id": "q008",
+    "question": "在Agent Chat UI中配置连接时，如果我没有LangSmith API key，是否还能正常连接到本地Agent服务器？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\ui.md"],
+    "gold_answer_summary": "本地开发调试通常不强制要求 LangSmith API key，只有涉及追踪/云端部署功能时才需要配置。（草稿，请核实）"
+  },
+  {
+    "id": "q009",
+    "question": "如何使用 langchain-mcp-adapters 库让 LangChain agent 同时调用多个 MCP 服务器上定义的工具？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\mcp.md"],
+    "gold_answer_summary": "通过 MultiServerMCPClient 类配置多个 MCP 服务器地址，统一加载所有服务器暴露的工具后传给 create_agent。（草稿，请核实类名）"
+  },
+  {
+    "id": "q010",
+    "question": "在 LangChain 中，如何使用 pypdf 和 pdf-parse 分别加载 PDF 文档，并配合嵌入和向量存储构建一个基于 RAG 的搜索系统？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\knowledge-base.md"],
+    "gold_answer_summary": "用对应的 PDF loader 加载文档并切分成 chunk，再用 embedding 模型向量化后存入向量数据库，最后结合检索器接入 agent。（草稿，请核实具体 loader 名称）"
+  },
+  {
+    "id": "q011",
+    "question": "在 LangChain 中使用 useStream 时，如何将它与 assistant-ui 的 AssistantRuntimeProvider 集成？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\frontend\\integrations\\overview.md"],
+    "gold_answer_summary": "需要把 useStream 返回的状态和方法适配成 assistant-ui 期望的 runtime 接口，再传给 AssistantRuntimeProvider。（草稿，请核实）"
+  },
+  {
+    "id": "q012",
+    "question": "在 LangChain 中，如何为消息添加或访问 metadata 字段，比如获取 token 使用量或消息 ID？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\messages.md"],
+    "gold_answer_summary": "消息对象上有 metadata/response_metadata 等属性，可以直接访问其中的 token 用量、消息 ID 等字段。（草稿，请核实具体属性名）"
+  },
+  {
+    "id": "q013",
+    "question": "如果我已经有一个SQL数据库作为知识库，在使用LangChain进行RAG时，是否还需要重新构建一个向量存储？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\retrieval.md"],
+    "gold_answer_summary": "不一定，LangChain 支持把 SQL 数据库作为检索源之一，可以结合 SQL 查询工具而不必强制用向量检索。（草稿，请核实）"
+  },
+  {
+    "id": "q014",
+    "question": "在 LangChain 中，如何通过 contentBlocks 属性区分并提取 GPT-5 或 Claude 返回的 reasoning 块和 text 块？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\frontend\\reasoning-tokens.md"],
+    "gold_answer_summary": "消息的 contentBlocks 数组里每一项有 type 字段区分 reasoning/text 等类型，遍历时按 type 过滤即可提取。（草稿，请核实）"
+  },
+  {
+    "id": "q015",
+    "question": "使用 LangChain 的 @tool 装饰器创建工具时，为什么类型提示是必需的，而 docstring 又有什么作用？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\tools.md"],
+    "gold_answer_summary": "类型提示用于自动生成工具的参数 schema 供模型理解调用格式，docstring 则作为工具描述帮助模型判断何时该调用这个工具。（草稿，请核实）"
+  },
+  {
+    "id": "q016",
+    "question": "如何在 pytest 中配置只运行集成测试，而跳过单元测试？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\test\\integration-testing.md"],
+    "gold_answer_summary": "通常通过 pytest marker（如 @pytest.mark.integration）标记集成测试，运行时用 -m 参数按标记筛选执行。（草稿，请核实具体配置）"
+  },
+  {
+    "id": "q017",
+    "question": "在 LangChain 的状态机模式中，如何根据用户的初始输入（比如通过分类器判断用户意图）来动态切换单个代理的配置（包括可用工具和指令）？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\multi-agent\\handoffs-customer-support.md"],
+    "gold_answer_summary": "在 agent 运行前先用一个分类步骤判断意图，再根据分类结果动态传入不同的工具集合和 system prompt 配置。（草稿，请核实）"
+  },
+  {
+    "id": "q018",
+    "question": "在 LangChain 中构建 agent 时，如果 agent 经常执行错误的操作，通常是由于 LLM 能力不足还是上下文工程（context engineering）的问题？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\context-engineering.md"],
+    "gold_answer_summary": "文档强调多数情况下问题出在上下文工程不当（比如工具描述不清晰、上下文过长或无关信息干扰），而不是模型能力本身不足。（草稿，请核实原文表述）"
+  },
+  {
+    "id": "q019",
+    "question": "在 LangChain 的 router pattern 中，如果我想让一个用户查询同时路由到 GitHub、Notion 和 Slack 三个不同的 agent，并在最后合成结果，应该如何实现这种并行路由和结果合成的具体代码？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\multi-agent\\router-knowledge-base.md"],
+    "gold_answer_summary": "通过并行调用多个子 agent（每个对接一个数据源），收集各自结果后用一个综合步骤把多路结果整合成最终回答。（草稿，请核实具体实现方式）"
+  },
+  {
+    "id": "q020",
+    "question": "在 LangChain 中，如果我不想使用多智能体系统，而用单个智能体处理复杂任务，有什么最佳实践或示例吗？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\multi-agent\\index.md"],
+    "gold_answer_summary": "文档建议优先考虑单 agent + 丰富工具集的方案，只有当任务边界清晰、需要隔离上下文时才考虑拆分成多 agent。（草稿，请核实）"
+  },
+  {
+    "id": "q021",
+    "question": "如何在 LangChain 中配置模型调用限制（Model call limit）中间件来防止成本过高？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\middleware\\built-in.md"],
+    "gold_answer_summary": "使用内置的 model call limit 中间件，设置最大调用次数阈值，超过后中断执行或返回提示。（草稿，请核实具体中间件名和参数）"
+  },
+  {
+    "id": "q022",
+    "question": "LangChain 部署后的代理（deployed agents）有哪些具体的管理或监控功能？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\studio.md"],
+    "gold_answer_summary": "LangSmith Studio 提供可视化调试、运行历史查看、状态检查等管理监控能力。（草稿，请核实具体功能列表）"
+  },
+  {
+    "id": "q023",
+    "question": "LangChain 中如何处理长对话历史超出 LLM 上下文窗口限制的问题？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\short-term-memory.md"],
+    "gold_answer_summary": "通过消息裁剪（trim）、摘要压缩历史消息等中间件策略，在保留关键信息的同时控制上下文长度。（草稿，请核实具体API）"
+  },
+  {
+    "id": "q024",
+    "question": "LangChain 的 skills 架构与 Agent Skills 和 llms.txt 模式有什么异同？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\multi-agent\\skills.md"],
+    "gold_answer_summary": "三者都是把可复用能力封装成模块供 agent 调用，具体差异在封装粒度和加载方式上，需要对照原文核实细节。（草稿，需要重点核实）"
+  },
+  {
+    "id": "q025",
+    "question": "如果我在使用LangChain时遇到技术问题，应该通过哪个渠道获得最快的社区帮助？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\get-help.md"],
+    "gold_answer_summary": "文档列出了官方 Discord/论坛/GitHub Issues 等求助渠道，具体渠道和响应速度需核实原文。（草稿）"
+  },
+  {
+    "id": "q026",
+    "question": "如何使用 CopilotKit 的 CopilotKitMiddleware 让 LangGraph agent 返回结构化的 UI 组件而不是纯文本？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\frontend\\integrations\\copilotkit.md"],
+    "gold_answer_summary": "通过 CopilotKitMiddleware 把 agent 输出转换成 CopilotKit 前端能识别的结构化组件格式。（草稿，请核实）"
+  },
+  {
+    "id": "q027",
+    "question": "在使用LangChain的create_agent时，如何为不同的大模型提供商（如OpenAI、Anthropic、Google）配置自定义工具？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\overview.md"],
+    "gold_answer_summary": "工具定义与模型提供商无关，只需把工具列表传给 create_agent 的 tools 参数，模型参数单独指定提供商和模型名即可。（草稿，请核实）"
+  },
+  {
+    "id": "q028",
+    "question": "在 React 中使用 useStream 时，如何实时解析和渲染 AI 返回的 Markdown 格式消息？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\frontend\\markdown-messages.md"],
+    "gold_answer_summary": "配合 Markdown 渲染库（如 react-markdown），在流式接收 chunk 时增量拼接文本并重新渲染。（草稿，请核实推荐库）"
+  },
+  {
+    "id": "q029",
+    "question": "在subagents架构中，如果我希望某个子代理能够直接与用户交互（例如收集额外信息），而不是只向主代理返回结果，应该如何实现？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\multi-agent\\subagents.md"],
+    "gold_answer_summary": "需要用 human-in-the-loop 或中断机制让子代理的交互请求穿透回用户层，而不是把结果直接返回给主代理继续处理。（草稿，请核实机制名称）"
+  },
+  {
+    "id": "q030",
+    "question": "我在 LangChain 的 prompt template 里直接写了一个 JSON 对象，结果报错说缺少输入变量，这是怎么回事？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\errors\\INVALID_PROMPT_INPUT.md"],
+    "gold_answer_summary": "JSON 里的花括号 {} 被 prompt template 引擎误认为是变量占位符，需要转义花括号或改用其他模板写法。（草稿，请核实转义方式）"
+  },
+  {
+    "id": "q031",
+    "question": "如何在 LangSmith Cloud 上从 GitHub 仓库部署我的 LangChain 代理？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\deploy.md"],
+    "gold_answer_summary": "连接 GitHub 仓库授权后，选择目标仓库和分支，LangSmith Cloud 会自动构建并部署 agent 服务。（草稿，请核实具体步骤）"
+  },
+  {
+    "id": "q032",
+    "question": "在 LangChain 中，如何定义一个用于结构化输出的工具，并确保返回的数据符合预定义的 TypeScript 类型？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\frontend\\structured-output.md"],
+    "gold_answer_summary": "用 schema（如 zod）定义期望的数据结构，配置给结构化输出工具，模型返回结果会按此类型校验。（草稿，请核实用的是哪个 schema 库）"
+  },
+  {
+    "id": "q033",
+    "question": "我收到 ValueError 说消息字典必须包含 'role' 和 'content' 键，但我的消息格式看起来是对的，可能是什么原因导致这个错误？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\errors\\MESSAGE_COERCION_FAILURE.md"],
+    "gold_answer_summary": "可能是消息字典的键名拼写、大小写不一致，或者嵌套结构不符合预期格式导致自动转换失败。（草稿，请核实原文具体排查步骤）"
+  },
+  {
+    "id": "q034",
+    "question": "在LangChain的create_agent中，如何通过Runtime对象向工具注入数据库连接等依赖，并确保工具可以访问这些运行时信息？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\runtime.md"],
+    "gold_answer_summary": "在 create_agent 时通过 context/runtime 参数传入依赖对象，工具函数内通过约定的参数（如 runtime.context）访问这些依赖。（草稿，请核实具体参数名）"
+  },
+  {
+    "id": "q035",
+    "question": "如何使用 LangChain 前端 SDK 实现人工审核（human-in-the-loop approval）的工作流？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\frontend\\overview.md"],
+    "gold_answer_summary": "agent 在需要审核的节点触发中断，前端 SDK 接收中断状态并展示审批 UI，用户确认后恢复执行。（草稿，请核实）"
+  },
+  {
+    "id": "q036",
+    "question": "如何在 LangChain 中使用 create_agent 创建的代理自动启用 LangSmith 追踪？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\observability.md"],
+    "gold_answer_summary": "配置好 LangSmith 相关环境变量（API key、项目名）后，create_agent 创建的代理会自动上报追踪数据，无需额外代码。（草稿，请核实环境变量名）"
+  },
+  {
+    "id": "q037",
+    "question": "在 LangChain 的 router 架构中，如何通过 Command 或 Send 实现将查询路由到单个或多个专业 agent，并最终合成结果？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\multi-agent\\router.md"],
+    "gold_answer_summary": "用 Command 控制流程跳转到指定 agent 节点，用 Send 实现并行分发到多个 agent，最后统一收集结果合成。（草稿，请核实两者具体用法差异）"
+  },
+  {
+    "id": "q038",
+    "question": "在 LangGraph 的自定义工作流中，如何在一个节点中嵌入一个完整的代理（agent）而不是单个函数调用？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\multi-agent\\custom-workflow.md"],
+    "gold_answer_summary": "把 create_agent 创建好的 agent 对象作为节点函数直接放进 LangGraph 的工作流图里，节点执行时就是调用整个 agent。（草稿，请核实）"
+  },
+  {
+    "id": "q039",
+    "question": "在安装 LangChain 和 deepagents 依赖时，如果使用 npm 或 pnpm，为什么需要 Node.js 22+ 版本？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\quickstart.md"],
+    "gold_answer_summary": "因为依赖用到了 Node 22+ 才支持的某些运行时特性或原生模块，低版本 Node 会安装失败或运行报错。（草稿，请核实具体原因）"
+  },
+  {
+    "id": "q040",
+    "question": "在LangChain的组件关系图中，用户查询（User Query）是如何经过嵌入模型和检索器最终获得相关上下文（Relevant context）的？",
+    "type": "single_doc",
+    "gold_sources": ["langchain\\component-architecture.md"],
+    "gold_answer_summary": "用户查询先经过 embedding 模型向量化，再由检索器在向量库中查找相似片段，返回的片段作为相关上下文注入到模型输入中。（草稿，请核实原图具体流程）"
+  },
+  {
+    "id": "q041",
+    "question": "如何构建一个既支持流式输出又能记住多轮对话上下文的 Agent？",
+    "type": "multi_hop",
+    "gold_sources": ["langchain\\streaming.md", "langchain\\short-term-memory.md"],
+    "gold_answer_summary": "需要结合短期记忆机制维护多轮对话状态，同时启用流式输出模式返回增量结果，两部分分别在不同文档中说明，用于测试跨文档综合能力。"
+  },
+  {
+    "id": "q042",
+    "question": "如何给部署到 LangSmith 的 Agent 配置追踪监控，并在工具调用出错时得到清晰的错误提示？",
+    "type": "multi_hop",
+    "gold_sources": ["langchain\\deploy.md", "langchain\\observability.md", "langchain\\errors\\INVALID_TOOL_RESULTS.md"],
+    "gold_answer_summary": "部署流程决定了追踪配置的入口，可观测性文档说明如何启用追踪，工具调用错误文档说明具体报错含义，三部分需要综合回答。"
+  },
+  {
+    "id": "q043",
+    "question": "在一个多 Agent Router 架构里，如何同时限制每个子 Agent 的调用成本？",
+    "type": "multi_hop",
+    "gold_sources": ["langchain\\multi-agent\\router.md", "langchain\\middleware\\built-in.md"],
+    "gold_answer_summary": "router 架构说明如何把请求分发给不同子 agent，中间件文档说明如何给每个 agent 挂载调用次数限制中间件，两者需要结合。"
+  },
+  {
+    "id": "q044",
+    "question": "如何为 Agent 同时挂载 MCP 工具和自定义 @tool 装饰器定义的工具？",
+    "type": "multi_hop",
+    "gold_sources": ["langchain\\mcp.md", "langchain\\tools.md"],
+    "gold_answer_summary": "MCP 工具通过适配器加载成 LangChain 工具对象，与 @tool 装饰器定义的自定义工具本质上是同一种工具接口，可以合并进同一个 tools 列表传给 create_agent。"
+  },
+  {
+    "id": "q045",
+    "question": "你好",
+    "type": "direct",
+    "gold_sources": [],
+    "gold_answer_summary": "闲聊问候，不需要检索文档，用于测试路由模块能否正确判断为 DIRECT。"
+  },
+  {
+    "id": "q046",
+    "question": "LangChain 是哪家公司开发的？",
+    "type": "direct",
+    "gold_sources": [],
+    "gold_answer_summary": "常识性问题（LangChain Inc.），不需要查询文档细节，用于测试路由准确性。"
+  },
+  {
+    "id": "q047",
+    "question": "谢谢你，帮了大忙",
+    "type": "direct",
+    "gold_sources": [],
+    "gold_answer_summary": "闲聊表达感谢，不需要检索，用于测试路由。"
+  },
+  {
+    "id": "q048",
+    "question": "什么是大语言模型？",
+    "type": "direct",
+    "gold_sources": [],
+    "gold_answer_summary": "通用常识问题，与 LangChain 文档细节无关，不需要检索，用于测试路由是否会误触发检索。"
+  },
+  {
+    "id": "q049",
+    "question": "今天北京天气怎么样？",
+    "type": "direct",
+    "gold_sources": [],
+    "gold_answer_summary": "与 LangChain 完全无关的闲聊问题，用于测试路由模块面对无关问题时是否会误触发检索。"
+  }
+]
